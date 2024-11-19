@@ -1,0 +1,53 @@
+from flask import Flask, jsonify, send_from_directory
+import pymysql
+
+app = Flask(__name__)
+
+# Database connection details
+host = "aurora-test.c16iw8gmmux2.us-east-2.rds.amazonaws.com"
+port = 3306
+user = "hauxleee"
+password = "hauxleee"
+db = "myfirstDB"
+
+
+def fetch_data():
+    try:
+        # Connect to the database using pymysql
+        conn = pymysql.connect(host=host, user=user, passwd=password, db=db, port=port)
+        cursor = conn.cursor(pymysql.cursors.DictCursor)  # Use DictCursor to return data as a list of dictionaries
+
+        # Query to fetch data from your ModelData table
+        fetch_sql = "SELECT * FROM ModelData;"  # Assuming your table name is ModelData
+        cursor.execute(fetch_sql)
+
+        # Fetch all records
+        results = cursor.fetchall()
+        return results
+    except pymysql.MySQLError as e:
+        return str(e)
+    finally:
+        if conn:
+            conn.close()
+
+
+@app.route('/')
+def home():
+    return send_from_directory('static', 'index.html')
+
+
+@app.route('/data', methods=['GET'])
+def get_data():
+    # Fetch data from database
+    results = fetch_data()
+    # Check if the fetch was successful
+    if isinstance(results, str):
+        # If there was an error, return it
+        return jsonify({'error': results}), 500
+    else:
+        # Return the results as JSON
+        return jsonify(results)
+
+
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=8848, debug=True)

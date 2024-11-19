@@ -1,0 +1,302 @@
+/*
+Theme Name: Telly Hotel
+Theme URI: 
+Author: 
+Author URI: 
+Description: Telly Hotel is specially designed product packaged for Telly Hotel by TemplatesJungle.
+Version: 
+*/
+
+/*--------------------------------------------------------------
+This is main CSS file that contains custom style rules used in this template
+--------------------------------------------------------------*/
+
+/*------------------------------------*\
+    Table of contents
+\*------------------------------------*/
+
+/*------------------------------------------------
+
+CSS STRUCTURE:
+
+    
+/*--------------------------------------------------------------
+/** 1. VARIABLES
+--------------------------------------------------------------*/
+:root {
+  --accent-color: #333;
+  --black-color: #000;
+  --dark-color: #111;
+  --gray-color-100: #F9F7F5;
+  --gray-color-200: #E1E1E1;
+  --gray-color-300: #D1D1D1;
+  --gray-color-400: #ced4da;
+  --gray-color-500: #adb5bd;
+  --dark-gray-color: #474341;
+  --bs-light-rgb: rgba(255, 255, 255, 1);
+  --light-color: #fff;
+  --bs-light-rgb: rgba(255, 255, 255, 1);
+  --primary-color: #ff8103;
+  --swiper-theme-color: #807E7C !important;
+}
+
+/* on mobile devices below 600px
+ */
+@media screen and (max-width: 600px) {
+  :root {
+    --header-height: 100px;
+    --header-height-min: 80px;
+  }
+}
+
+/* Fonts */
+:root {
+  --body-font: "IBM Plex Sans", sans-serif;
+  --heading-font: "Old Standard TT", serif;
+}
+
+
+/*----------------------------------------------*/
+/* 1 GENERAL TYPOGRAPHY */
+/*----------------------------------------------*/
+
+/* 1.1 General Styles
+/*----------------------------------------------*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+ul.inner-list li {
+  font-size: 1.2em;
+  color: var(--dark-gray-color);
+}
+
+a {
+  color: var(--dark-gray-colo);
+  text-decoration: none;
+  transition: 0.3s color ease-out;
+}
+
+a.light {
+  color: var(--light-color);
+}
+
+a.stretched-link {
+  color: var(--primary-color);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+p.light {
+  color: var(--light-color);
+}
+
+span.light {
+  color: var(--light-color);
+}
+
+svg.light {
+  color: var(--light-color);
+}
+
+table.light tr {
+  color: var(--light-color);
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+.highlight {
+  background: var(--dark-color);
+  color: var(--light-color);
+}
+
+/*------------ Background Color -----------*/
+.bg-gray-100 {
+  background: var(--gray-color-100);
+}
+
+.bg-black {
+  /* --bs-bg-opacity: 1; */
+  background-color: var(--dark-color) !important;
+}
+
+/*------------ Border Radius -----------*/
+.border-rounded-10 {
+  border-radius: 10px;
+}
+
+/* - Section Padding
+--------------------------------------------------------------*/
+.padding-small {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.padding-medium {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.padding-large {
+  padding-top: 7em;
+  padding-bottom: 7em;
+}
+
+.padding-xlarge {
+  padding-top: 10em;
+  padding-bottom: 10em;
+}
+
+/* - Section margin
+--------------------------------------------------------------*/
+.margin-small {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.margin-medium {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.margin-large {
+  margin-top: 7em;
+  margin-bottom: 7em;
+}
+
+.margin-xlarge {
+  margin-top: 9em;
+  margin-bottom: 9em;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .margin-small,
+  .margin-medium,
+  .margin-large {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+/* - Section Title
+--------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  line-height: 1;
+}
+
+h1.light,
+h2.light,
+h3.light,
+h4.light,
+h5.light {
+  color: var(--light-color);
+}
+
+h1.heading {
+  font-size: 6.5em;
+}
+
+h2 {
+  font-size: 2.8em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+
+
+/*----------------------------------------------*/
+/* 2 SITE STRUCTURE */
+/*----------------------------------------------*/
+
+/* - Our Rooms
+------------------------------------------------------------- */
+#our-rooms .product-card .detail {
+  width: 100%;
+  height: 358px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  padding: 40px;
+  transition: 0.9s all;
+}
+
+#our-rooms .product-card:hover .detail {
+  bottom: 50px;
+  padding: 80px 40px;
+  opacity: 1;
+  background-color: var(--gray-color-100);
+}
+
+#our-rooms .swiper-arrow svg {
+  top: 30%;
+  padding: 18px;
+  width: 60px;
+  height: 60px;
+  z-index: 3;
+  background-color: var(--gray-color-100);
+}
+
+#our-rooms svg.icon-arrow-left {
+  left: 60px;
+}
+
+#our-rooms svg.icon-arrow-right {
+  right: 60px;
+}
+
+#our-rooms .swiper-arrow svg:hover {
+  background-color: var(--gray-color-100);
+}
+
+@media only screen and (max-width: 901px) {
+  #our-rooms .swiper-arrow svg {
+    top: 73%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #our-rooms .swiper-arrow svg {
+    top: 68%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #our-rooms .swiper-arrow svg {
+    top: 40%;
+  }
+}
+
+

@@ -1,0 +1,143 @@
+/* 表格基础样式 */
+table {
+	margin: 0 auto; /* 居中显示 */
+	/* width: 450px; */
+	border-collapse: collapse;
+	text-align: center;
+	/* margin-top: 20px; */
+	font-family: 'DM Sans', sans-serif; /* 设置更好看的字体 */
+}
+
+/* 表头样式 */
+table thead th {
+ 
+  padding: 20px;
+  border: 1px solid #ddd;
+   position: sticky ; 
+  top: 0%;  /*当滚动超过表头时，表头固定在顶部 */
+  /* z-index: 100; 确保表头在滚动时能够覆盖其他元素*/
+}
+
+
+
+
+
+/* 表格单元格样式 */
+table tbody td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+/* 鼠标悬停行的样式 */
+table tbody tr:hover {
+  background-color: #b8a5f6 !important;
+}
+
+/* 交替行颜色样式 */
+table tbody tr:nth-child(odd) {
+  background-color: #e6e5e8; /* 浅灰色 */
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #FFFFFF; /* 白色 */
+}
+
+.data-container {
+	margin-top: 5%;
+	margin-bottom: 3%;
+}
+
+.showMSE {
+
+	background-color: #7E57FF; /* 绿色 */
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 10%;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	border: 2px solid #7E57FF; /* 边框颜色与背景色相同 */
+	border-radius: 5px; /* 轻微的圆角 */
+}
+
+.showMSE:hover {
+	background-color: white; /* 悬停时背景色变为白色 */
+	color: #7E57FF; /* 悬停时文字颜色变为绿色 */
+}
+
+.showMAE {
+
+	background-color: #7E57FF; /* 绿色 */
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 5%;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	border: 2px solid #7E57FF; /* 边框颜色与背景色相同 */
+	border-radius: 5px; /* 轻微的圆角 */
+}
+
+.showMAE:hover {
+	background-color: white; /* 悬停时背景色变为白色 */
+	color: #7E57FF; /* 悬停时文字颜色变为绿色 */
+}
+
+/* 下拉选择菜单的基础样式 */
+.predLenSelect {
+	background-color: #7E57FF; /* 背景色与按钮相同 */
+	color: white; /* 文字颜色为白色 */
+	padding: 10px 15px; /* 内边距调整 */
+	font-size: 16px; /* 字体大小 */
+	border: 2px solid #7E57FF; /* 边框颜色与背景色相同 */
+	border-radius: 5px; /* 轻微的圆角 */
+
+	transition-duration: 0.4s; /* 过渡动画 */
+	cursor: pointer; /* 鼠标悬停时显示手形图标 */
+}
+
+/* 下拉菜单项的基础样式 */
+.predLenSelect option {
+	background-color: white; /* 选项背景色为白色 */
+	color: #7E57FF; /* 选项文字颜色与按钮悬停状态相同 */
+}
+
+/* 下拉选择菜单悬停效果 */
+.predLenSelect:hover {
+	background-color: white; /* 悬停时背景色变为白色 */
+	color: #7E57FF; /* 悬停时文字颜色变为按钮背景色 */
+}
+
+/* Choose PredLen标签的样式 */
+label[for="predLenSelect"] {
+	margin-left: 10%;
+	font-size: 18px; /* 增加字体大小 */
+	color: #7E57FF; /* 设定一个与按钮和选择框协调的颜色 */
+	font-family: 'Arial', sans-serif; /* 使用Arial字体，保持与表格字体一致 */
+	font-weight: bold; /* 加粗字体，让标签更为显眼 */
+	margin-right: 10px; /* 右边距，确保与下拉框有适当间距 */
+}
+
+/* 基础样式 */
+.mse-table th.sortable, .mae-table th.sortable {
+    cursor: pointer; /* 将鼠标指针改为指针样式，表示这些元素是可交互的 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
+}
+
+/* 悬停样式 */
+.mse-table th.sortable:hover, .mae-table th.sortable:hover {
+    background-color: #7E57FF; /* 悬停时的背景色 */
+    color: white; /* 悬停时的文字颜色 */
+}
+
+/* 点击样式 */
+.column-highlighted {
+    background-color: #f0f2f3; /* 紫色背景 */
+    color: black; /* 白色文字 */
+}

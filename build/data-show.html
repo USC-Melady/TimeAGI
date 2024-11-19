@@ -1,0 +1,2724 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Data Show</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+    
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/assets/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="/static/assets/css/animate.css" />
+    <link rel="stylesheet" href="/static/assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="/static/assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/static/assets/css/main.css" />
+    <link rel="stylesheet" href="/static/assets/css/data-container.css" />
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" />
+    <script src="/static/assets/js/modernizr.js"></script>
+      
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .dropdown-menu {
+            max-height: 200px; /* Adjust the height as needed */
+            overflow-y: auto;
+            position: fixed;
+            /* z-index: 1000; */
+        }
+        .btn{color: #FFFF; font-weight: bold; font-size: larger;}
+        .theader{border-bottom: 1px solid #FFF}
+        .table-responsive{ overflow: visible; border-radius: 5px; box-shadow: 0px 5px 30px 5px #727074;
+            margin-bottom: 5%;margin-left: 5%;margin-right: 6%;}
+        .navbar-area{
+				position: fixed;
+				z-index: 100;
+				transition: background-color 0.3s ;
+				
+				background-color: transparent;
+			}
+		.navbar-area.scrolled{ background-color: #FFF;}
+    </style>
+</head>
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Data Show</h1>
+                        <ul class="breadcrumb-nav">
+                            <li><a href="#">Home</a></li>
+                            <li>Data Show</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+<body>
+    <!-- Start Header Area -->
+    <header class="header navbar-area" id="navbar-area" >
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="/" aria-label="Toggle navigation">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/document.html" aria-label="Toggle navigation">Document</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed active" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Data Show</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-2">
+                                            <li class="nav-item"><a href="/data-show.html">Sample-1</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <!-- <div class="button">
+                                <a href="signup.html" class="btn">Get started</a>
+                            </div> -->
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+    <!-- table -->
+    <div class=" table-responsive" id="InputData1" >
+        <table class='Table text-nowrap'>
+            <thead>
+                <tr class="text-center " style="background-color: #7E57FF;"  >
+                    <th class="theader" width="250px">
+                        <div class="dropdown d-inline">
+                            <button class="btn dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Model
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton"  >
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','TEMPO')">TEMPO</a></li>  
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','ETSformer')">ETSformer</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','FEDFormer')">FEDFormer</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','GPT2')">GPT2</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','Informer')">Informer</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','PatchTST')">PatchTST</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','T5')">T5</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','Timesnet')">Timesnet</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','DLinear')">DLinear</a></li>
+                                <li> <a class="dropdown-item" href="#" onclick="setFilter('model','')">Show All</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th class="theader" width="250px">
+                        <div class="dropdown d-inline">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Dataset
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ECL')">ECL</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ETTh1')">ETTh1</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ETTh2')">ETTh2</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ETTm1')">ETTm1</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ETTm2')">ETTm2</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','Traffic')">Traffic</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','Weather')">Weather</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','')">Show All</a> </li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th class="theader" width="250px">
+                        <div class="dropdown d-inline">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Prediction Length
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','96')">96</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','192')">192</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','336')">336</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','720')">720</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','Avg')">Avg</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','')">Show All</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th class="theader" width="250px" > 
+                        <button class="sortable btn  "  onclick="sortTable(3)">MSE</button>
+                       
+                        
+                    </th>
+                    <th class="theader" width="250px">
+                        <button class="sortable btn " onclick="sortTable(4)">MAE</button>
+                        
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.178</td>
+                    <td>0.276</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.198</td>
+                    <td>0.293</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.209</td>
+                    <td>0.309</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.279</td>
+                    <td>0.355</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.216</td>
+                    <td>0.308</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.476</td>
+                    <td>0.343</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.496</td>
+                    <td>0.355</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.503</td>
+                    <td>0.356</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.538</td>
+                    <td>0.376</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.503</td>
+                    <td>0.358</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.211</td>
+                    <td>0.254</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.254</td>
+                    <td>0.298</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.292</td>
+                    <td>0.332</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.37</td>
+                    <td>0.379</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.282</td>
+                    <td>0.316</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.438</td>
+                    <td>0.424</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.461</td>
+                    <td>0.432</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.515</td>
+                    <td>0.467</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.591</td>
+                    <td>0.509</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.501</td>
+                    <td>0.458</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.185</td>
+                    <td>0.267</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.243</td>
+                    <td>0.304</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.309</td>
+                    <td>0.345</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.386</td>
+                    <td>0.395</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.281</td>
+                    <td>0.328</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.4</td>
+                    <td>0.406</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.426</td>
+                    <td>0.421</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.441</td>
+                    <td>0.43</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.443</td>
+                    <td>0.451</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.428</td>
+                    <td>0.427</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.301</td>
+                    <td>0.353</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.355</td>
+                    <td>0.389</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.379</td>
+                    <td>0.408</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.409</td>
+                    <td>0.44</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>TEMPO</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.361</td>
+                    <td>0.398</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.189</td>
+                    <td>0.286</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.206</td>
+                    <td>0.302</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.232</td>
+                    <td>0.324</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.262</td>
+                    <td>0.347</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.222</td>
+                    <td>0.315</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.531</td>
+                    <td>0.385</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.54</td>
+                    <td>0.39</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.548</td>
+                    <td>0.392</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.572</td>
+                    <td>0.395</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.548</td>
+                    <td>0.391</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.229</td>
+                    <td>0.275</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.279</td>
+                    <td>0.319</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.366</td>
+                    <td>0.364</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.484</td>
+                    <td>0.427</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.339</td>
+                    <td>0.346</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.486</td>
+                    <td>0.438</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.535</td>
+                    <td>0.473</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.571</td>
+                    <td>0.502</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.565</td>
+                    <td>0.496</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.539</td>
+                    <td>0.477</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.193</td>
+                    <td>0.273</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.254</td>
+                    <td>0.312</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.315</td>
+                    <td>0.35</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.394</td>
+                    <td>0.397</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.289</td>
+                    <td>0.333</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.407</td>
+                    <td>0.415</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.434</td>
+                    <td>0.431</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.444</td>
+                    <td>0.44</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.445</td>
+                    <td>0.454</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.432</td>
+                    <td>0.435</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.32</td>
+                    <td>0.364</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.394</td>
+                    <td>0.407</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.393</td>
+                    <td>0.415</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.415</td>
+                    <td>0.438</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>GPT2</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.38</td>
+                    <td>0.406</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.489</td>
+                    <td>0.546</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.465</td>
+                    <td>0.535</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.531</td>
+                    <td>0.569</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.475</td>
+                    <td>0.532</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.49</td>
+                    <td>0.545</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">96</td>
+                    <td>1.023</td>
+                    <td>0.641</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.992</td>
+                    <td>0.633</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.987</td>
+                    <td>0.626</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">720</td>
+                    <td>1.152</td>
+                    <td>0.706</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>1.039</td>
+                    <td>0.652</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.247</td>
+                    <td>0.301</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.277</td>
+                    <td>0.324</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.317</td>
+                    <td>0.347</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.375</td>
+                    <td>0.388</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.304</td>
+                    <td>0.34</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.733</td>
+                    <td>0.554</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.739</td>
+                    <td>0.563</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.755</td>
+                    <td>0.576</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.739</td>
+                    <td>0.57</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.741</td>
+                    <td>0.566</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.273</td>
+                    <td>0.345</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.299</td>
+                    <td>0.355</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.342</td>
+                    <td>0.382</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.421</td>
+                    <td>0.421</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.334</td>
+                    <td>0.376</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.57</td>
+                    <td>0.518</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.58</td>
+                    <td>0.528</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.677</td>
+                    <td>0.573</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.54</td>
+                    <td>0.521</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.592</td>
+                    <td>0.535</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.379</td>
+                    <td>0.412</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.387</td>
+                    <td>0.417</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.386</td>
+                    <td>0.425</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.425</td>
+                    <td>0.448</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>PatchTST</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.394</td>
+                    <td>0.425</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.195</td>
+                    <td>0.292</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.204</td>
+                    <td>0.3</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.231</td>
+                    <td>0.325</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.259</td>
+                    <td>0.352</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.222</td>
+                    <td>0.317</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.609</td>
+                    <td>0.424</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.595</td>
+                    <td>0.412</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.624</td>
+                    <td>0.427</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.623</td>
+                    <td>0.42</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.613</td>
+                    <td>0.421</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.212</td>
+                    <td>0.275</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.259</td>
+                    <td>0.308</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.304</td>
+                    <td>0.342</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.363</td>
+                    <td>0.389</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.284</td>
+                    <td>0.329</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.624</td>
+                    <td>0.522</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.599</td>
+                    <td>0.511</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.622</td>
+                    <td>0.534</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.639</td>
+                    <td>0.559</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.621</td>
+                    <td>0.531</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.264</td>
+                    <td>0.352</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.292</td>
+                    <td>0.365</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.361</td>
+                    <td>0.411</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.515</td>
+                    <td>0.49</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.358</td>
+                    <td>0.405</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.414</td>
+                    <td>0.421</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.439</td>
+                    <td>0.437</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.463</td>
+                    <td>0.464</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.467</td>
+                    <td>0.481</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.446</td>
+                    <td>0.451</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.334</td>
+                    <td>0.389</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.381</td>
+                    <td>0.415</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.471</td>
+                    <td>0.482</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.639</td>
+                    <td>0.559</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>DLinear</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.456</td>
+                    <td>0.461</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.293</td>
+                    <td>0.369</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.283</td>
+                    <td>0.366</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.733</td>
+                    <td>0.633</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">720</td>
+                    <td>1.166</td>
+                    <td>0.859</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.619</td>
+                    <td>0.557</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.585</td>
+                    <td>0.401</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.64</td>
+                    <td>0.431</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">336</td>
+                    <td>1.609</td>
+                    <td>0.864</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">720</td>
+                    <td>1.974</td>
+                    <td>0.971</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>1.202</td>
+                    <td>0.667</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.247</td>
+                    <td>0.295</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.316</td>
+                    <td>0.342</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.359</td>
+                    <td>0.372</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.423</td>
+                    <td>0.405</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.336</td>
+                    <td>0.353</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.518</td>
+                    <td>0.47</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.55</td>
+                    <td>0.49</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.638</td>
+                    <td>0.532</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.723</td>
+                    <td>0.577</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.607</td>
+                    <td>0.517</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.202</td>
+                    <td>0.29</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.261</td>
+                    <td>0.318</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.38</td>
+                    <td>0.392</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.399</td>
+                    <td>0.409</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.3105</td>
+                    <td>0.35225</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.407</td>
+                    <td>0.423</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.439</td>
+                    <td>0.439</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.555</td>
+                    <td>0.503</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.438</td>
+                    <td>0.461</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.46</td>
+                    <td>0.457</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.315</td>
+                    <td>0.362</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.394</td>
+                    <td>0.406</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.384</td>
+                    <td>0.413</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.394</td>
+                    <td>0.431</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Timesnet</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.372</td>
+                    <td>0.403</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.185</td>
+                    <td>0.282</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.205</td>
+                    <td>0.302</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.229</td>
+                    <td>0.321</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.266</td>
+                    <td>0.351</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.221</td>
+                    <td>0.314</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.508</td>
+                    <td>0.366</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.524</td>
+                    <td>0.374</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.55</td>
+                    <td>0.391</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.578</td>
+                    <td>0.404</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.54</td>
+                    <td>0.384</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.217</td>
+                    <td>0.271</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.277</td>
+                    <td>0.321</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.33</td>
+                    <td>0.33</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.528</td>
+                    <td>0.451</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.338</td>
+                    <td>0.343</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.529</td>
+                    <td>0.464</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.523</td>
+                    <td>0.454</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.572</td>
+                    <td>0.504</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.694</td>
+                    <td>0.568</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.58</td>
+                    <td>0.497</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.19</td>
+                    <td>0.268</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.246</td>
+                    <td>0.306</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.316</td>
+                    <td>0.346</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.394</td>
+                    <td>0.397</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.2865</td>
+                    <td>0.32925</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.4</td>
+                    <td>0.409</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.428</td>
+                    <td>0.426</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.442</td>
+                    <td>0.438</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.443</td>
+                    <td>0.458</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.428</td>
+                    <td>0.433</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.328</td>
+                    <td>0.366</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.413</td>
+                    <td>0.41</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.416</td>
+                    <td>0.427</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.425</td>
+                    <td>0.44</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>T5</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.395</td>
+                    <td>0.411</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.512</td>
+                    <td>0.531</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.625</td>
+                    <td>0.619</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">336</td>
+                    <td>1.222</td>
+                    <td>0.863</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.881</td>
+                    <td>0.778</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.81</td>
+                    <td>0.697</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">96</td>
+                    <td>1.4</td>
+                    <td>0.83</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.872</td>
+                    <td>0.506</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.978</td>
+                    <td>0.507</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">720</td>
+                    <td>1.532</td>
+                    <td>0.8</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>1.195</td>
+                    <td>0.661</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.837</td>
+                    <td>0.711</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.431</td>
+                    <td>0.455</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.37</td>
+                    <td>0.412</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">720</td>
+                    <td>1.133</td>
+                    <td>0.842</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.693</td>
+                    <td>0.605</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.88</td>
+                    <td>0.657</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>1.461</td>
+                    <td>0.892</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.949</td>
+                    <td>0.631</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.779</td>
+                    <td>0.616</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>1.017</td>
+                    <td>0.699</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.263</td>
+                    <td>0.36</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.494</td>
+                    <td>0.516</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.788</td>
+                    <td>0.622</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>1.075</td>
+                    <td>0.725</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.655</td>
+                    <td>0.55575</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.642</td>
+                    <td>0.562</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.798</td>
+                    <td>0.632</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>1.125</td>
+                    <td>0.81</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.836</td>
+                    <td>0.687</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.85</td>
+                    <td>0.673</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.704</td>
+                    <td>0.651</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.455</td>
+                    <td>0.883</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>1.389</td>
+                    <td>0.848</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>1.33</td>
+                    <td>0.866</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>Informer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.97</td>
+                    <td>0.812</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.707</td>
+                    <td>0.638</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.721</td>
+                    <td>0.645</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.862</td>
+                    <td>0.707</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.666</td>
+                    <td>0.64</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.75</td>
+                    <td>0.664</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">96</td>
+                    <td>1.419</td>
+                    <td>0.795</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.995</td>
+                    <td>0.658</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.94</td>
+                    <td>0.621</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.798</td>
+                    <td>0.518</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>1.038</td>
+                    <td>0.648</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.453</td>
+                    <td>0.416</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.545</td>
+                    <td>0.466</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.487</td>
+                    <td>0.444</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.592</td>
+                    <td>0.506</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.519</td>
+                    <td>0.458</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>1.117</td>
+                    <td>0.678</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>1.598</td>
+                    <td>0.803</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>1.154</td>
+                    <td>0.682</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>1.038</td>
+                    <td>0.665</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>1.227</td>
+                    <td>0.707</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.353</td>
+                    <td>0.404</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.39</td>
+                    <td>0.416</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.409</td>
+                    <td>0.428</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.444</td>
+                    <td>0.438</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.399</td>
+                    <td>0.4215</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.469</td>
+                    <td>0.457</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.548</td>
+                    <td>0.503</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.728</td>
+                    <td>0.585</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.615</td>
+                    <td>0.561</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.59</td>
+                    <td>0.5265</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.405</td>
+                    <td>0.428</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.476</td>
+                    <td>0.468</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.446</td>
+                    <td>0.451</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.446</td>
+                    <td>0.466</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>ETSformer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.443</td>
+                    <td>0.453</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.3</td>
+                    <td>0.399</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.39</td>
+                    <td>0.468</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.317</td>
+                    <td>0.406</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.423</td>
+                    <td>0.48</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ECL</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.358</td>
+                    <td>0.439</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.835</td>
+                    <td>0.564</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.869</td>
+                    <td>0.579</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">336</td>
+                    <td>1.006</td>
+                    <td>0.64</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.965</td>
+                    <td>0.652</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Traffic</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.919</td>
+                    <td>0.609</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.292</td>
+                    <td>0.346</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.372</td>
+                    <td>0.426</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.639</td>
+                    <td>0.6</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.409</td>
+                    <td>0.425</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>Weather</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.428</td>
+                    <td>0.449</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.698</td>
+                    <td>0.553</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.819</td>
+                    <td>0.608</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.785</td>
+                    <td>0.624</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.816</td>
+                    <td>0.614</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.78</td>
+                    <td>0.6</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.665</td>
+                    <td>0.634</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.358</td>
+                    <td>0.416</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.372</td>
+                    <td>0.424</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.455</td>
+                    <td>0.462</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTm2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.4625</td>
+                    <td>0.484</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.509</td>
+                    <td>0.502</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.683</td>
+                    <td>0.596</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">336</td>
+                    <td>0.582</td>
+                    <td>0.542</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.688</td>
+                    <td>0.618</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh1</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>0.616</td>
+                    <td>0.564</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">96</td>
+                    <td>0.385</td>
+                    <td>0.426</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">192</td>
+                    <td>0.921</td>
+                    <td>0.748</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">336</td>
+                    <td>36.005</td>
+                    <td>5.755</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">720</td>
+                    <td>0.427</td>
+                    <td>0.452</td>
+                </tr>
+                
+                <tr class="text-center">
+                    <td>FEDFormer</td>
+                    <td>ETTh2</td>
+                    <td style="width: 210px;">Avg</td>
+                    <td>9.435</td>
+                    <td>1.845</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+        <!-- jQuery -->
+    <!-- jQuery -->
+    <script src="/static/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <!-- Popper.js -->
+    <script src="/static/assets/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+    <script src="static/js/data-show.js">  </script>
+    <script>
+        window.addEventListener('scroll', function() {
+          const navbar = document.getElementById('navbar-area');
+          if (window.scrollY > 0) { 
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+    </script>
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+</body>
+
+</html>

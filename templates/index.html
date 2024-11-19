@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Craft - Startup Landing Page Template.</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename='assets/images/favicon.svg')}}" />
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/LineIcons.3.0.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/animate.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/tiny-slider.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/glightbox.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}" />
+	<link rel="stylesheet" href="{{url_for('static',filename='assets/css/data-container.css')}}" />
+    <!-- <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" /> -->
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" />
+	
+    <script src="{{url_for('static',filename='assets/js/modernizr.js')}}"></script>
+	  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Old+Standard+TT:wght@400;700&display=swap"
+	    rel="stylesheet">
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="{{url_for('home')}}" class="active" aria-label="Toggle navigation">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{url_for('document')}}" aria-label="Toggle navigation">Document</a>
+                                    </li>
+									<li class="nav-item">
+									    <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+									        data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
+									        aria-expanded="false" aria-label="Toggle navigation">Data Show</a>
+									    <ul class="sub-menu collapse" id="submenu-1-2">
+									        <li class="nav-item"><a href="{{url_for('datashow')}}">Sample-1</a></li>
+									    </ul>
+									</li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <!-- <div class="button">
+                                <a href="signup.html" class="btn">Get started</a>
+                            </div> -->
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+	
+    <!--
+    <section class="hero-area" style="display: flex; align-items: center;">
+        <div class="main__circle2"></div>
+        <div class="main__circle3"></div>
+        <div class="main__circle4"></div>
+        <div class="container">
+            <div style="flex: 1; padding: 20px;">
+            <h2>Time Series Foundation Model</h2>
+            <p>We empower organizations to harness the full potential of their data through our cutting-edge multi-modality time series solution. Our platform stands at the forefront of analytics, seamlessly blending diverse data streams—from temporal patterns to spatial imagery and beyond—into a cohesive analytical framework.</p>
+            </div>
+        
+            <div style="flex: 1; text-align: center;">
+                <img src="{{url_for('static',filename='assets/images/document/doc-s1.jpg')}}" alt="App Image" style="width: 100%; height: auto;">
+            </div>
+        </div>
+    </section>
+    -->
+	<!-- Start Hero Area  -->
+     <!--
+    <section class="hero-area">
+        <div class="main__circle2"></div>
+        <div class="main__circle3"></div>
+        <div class="main__circle4"></div>
+    
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-12">
+                    <div class="section-title" style="text-align: left;">
+                        <h2 class="wow zoomIn" data-wow-delay=".1s">Time Series Foundation Model</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s" style="max-width: none;">Our team is at the forefront of large-scale language models (LLMs) for time series analysis, delivering innovative solutions that push the boundaries of what is possible in temporal data. By leveraging the power of advanced LLMs and a deep understanding of temporal dynamics, we help organizations unlock the potential of their time-dependent data. Our platform sets a high standard, utilizing LLMs to achieve high levels of accuracy in forecasting, anomaly detection, and complex trend analysis. From financial markets to industrial sensors, we enable businesses to navigate temporal complexities and make informed, data-driven decisions with confidence. Discover how our intelligent time series analytics can transform your decision-making and drive future success.</p>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 col-12">
+                    <div class="app-image" style="text-align: left;">
+                        <img src="{{url_for('static',filename='assets/images/document/doc-s1.jpg')}}" alt="App Image" style="width: 120%; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .hero-area {
+            position: relative;
+        }
+        .section-title {
+            padding-left: 2%;
+            text-align: left;
+        }
+        .app-image img {
+            max-width: 120%;
+            height: auto;
+        }
+    </style>
+    -->
+    <section class="hero-area timegpt-section" style="position: relative; padding: 100px 0; background: url('{{url_for('static',filename='assets/images/w5.png')}}') no-repeat center center / cover; display: flex; align-items: center; justify-content: center;">
+        <div class="container text-center">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-12 col-12">
+                    <div class="section-title" style="color: #ffffff;">
+                        <h2 class="wow zoomIn" data-wow-delay=".1s" style="color: #ffffff; font-family: 'Microsoft YaHei', sans-serif;">TimeAGI</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s" style="color: #ffffff; font-size: 1.25rem; line-height: 1.8; max-width: 1200px; margin: 0 auto; font-family: 'Microsoft YaHei', sans-serif;">
+                            TimeAGI is a versatile framework and toolkit for time series forecasting and analysis, designed to meet the demands of complex, multi-faceted temporal tasks. Equipped with powerful capabilities for accurate time series prediction, anomaly detection, and sophisticated composite reasoning, TimeAGI pushes the boundaries of what’s possible with foundation models in time series analysis. It offers a suite of adaptable, foundation model-based solutions tailored for diverse applications, from financial forecasting and energy management to climate science, natural sciences, and social sciences. With TimeAGI, organizations in critical sectors gain access to reliable, next-generation time series insights, enabling impactful data-driven decisions.
+                        </p>
+                        <div class="button-group mt-4">
+                            <a href="#timeagi-models" class="btn btn-primary">Get Started</a>
+                            <a href="{{ url_for('document') }}" class="btn btn-outline-light ms-3">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .timegpt-section {
+            background: url('{{url_for('static',filename='assets/images/w5.png')}}') no-repeat center center / cover;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70vh; /* 高度为视口的80% */
+        }
+        .timegpt-section .section-title h2 {
+            color: #fff;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .timegpt-section .section-title p {
+            max-width: 1600px; /* 或者设置为100%，具体取决于页面布局 */
+        }
+        .timegpt-section p {
+            color: #ccc;
+            font-size: 1.25rem;
+            line-height: 1.8;
+        }
+        .timegpt-section .button-group .btn {
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        .timegpt-section .btn-primary {
+            background-color: #1e90ff;
+            color: #fff;
+            text-decoration: none;
+        }
+        .timegpt-section .btn-outline-light {
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+    
+    <style>
+        .section-title {
+            padding-left: 10%;
+            text-align: left;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+    </style>
+	<!-- End Hero Area -->
+
+    <!-- Start Services Area -->
+    <div id="timeagi-models" class="services section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <!--  <h3 class="wow zoomIn" data-wow-delay=".2s" style="font-size: 30px;" >TimeAGI Models</h3> -->
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s; font-family: 'Microsoft YaHei', sans-serif;">TimeAGI Models</h2>
+                        <!--  <h2 class="wow fadeInUp" data-wow-delay=".4s">Time Series Foundation Model</h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="single-service">
+                        <div class="main-icon">
+                            <img src="{{url_for('static',filename='assets/images/tempo_icon.png')}}" alt="Forecasting Suite Icon" style="width: 100px; height: 80px;">
+                        </div>
+                        <h4 class="text-title">TEMPO</h4>
+                        <p style="margin-bottom: 20px; text-align: justify;"> TEMPO is a framework using prompt-based transformers for time series forecasting across domains like healthcare and finance. With decomposition techniques and multimodal data, it excels in zero-shot forecasting and helps identify key drivers behind trends, supporting data-driven decisions. </p>
+                        <p style="margin-bottom: 20px; text-align: center;"><strong>Paper Link</strong> <a href="https://openreview.net/pdf?id=YH5w12OUuU" style="padding: 1px 4px; background-color: #add8e6; color: white; border-radius: 5px; text-decoration: none;"> ➔</a> </p>
+
+                        <p style="margin-bottom: 20px; text-align: center;"><strong>GitHub Repository</strong> <a href="https://github.com/DC-research/TEMPO/tree/main" style="padding: 1px 4px; background-color: #add8e6; color: white; border-radius: 5px; text-decoration: none;"> ➔</a> </p>
+
+                        <p style="margin-bottom: 20px; text-align: center;"><strong>HuggingFace Model</strong> <a href="https://huggingface.co/Melady/TEMPO" style="padding: 1px 4px; background-color: #add8e6; color: white; border-radius: 5px; text-decoration: none;"> ➔</a> </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="single-service">
+                        <div class="main-icon">
+                            <img src="{{url_for('static',filename='assets/images/timedit_icon.jpg')}}" alt="Forecasting Suite Icon" style="width: 100px; height: 80px;">
+                        </div>
+                        <h4 class="text-title">TimeDiT</h4>
+                        <p style="margin-bottom: 20px; text-align: justify;"> TimeDiT is a foundation model for time series analysis, leveraging a diffusion-based approach with Transformer architecture to handle complex tasks like forecasting, imputation, and anomaly detection. By using denoising diffusion, TimeDiT effectively manages missing values and temporal dependencies. </p>
+                        <p style="margin-bottom: 20px; text-align: center;"><strong>Paper Link</strong>  <a href="https://arxiv.org/pdf/2409.02322" style="padding: 1px 4px; background-color: #add8e6; color: white; border-radius: 5px; text-decoration: none;"> ➔</a> </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="single-service">
+                        <div class="main-icon">
+                            <img src="{{url_for('static',filename='assets/images/tsreasoner_icon.jpg')}}" alt="Forecasting Suite Icon" style="width: 100px; height: 80px;">
+                        </div>
+                        <h4 class="text-title">TS-Reasoner</h4>
+                        <p style="margin-bottom: 20px; text-align: justify;"> TS-Reasoner is an advanced framework for complex time series reasoning, integrating large language models (LLMs) to break down multi-step tasks like decision-making and causal analysis into structured programs. TS-Reasoner synthesizes time series data with domain expertise, enabling custom modules and flexible task decomposition. </p>
+                        <p style="margin-bottom: 20px; text-align: center;"><strong>Paper Link</strong> <a href="https://arxiv.org/pdf/2410.04047" style="padding: 1px 4px; background-color: #add8e6; color: white; border-radius: 5px; text-decoration: none;"> ➔</a> </p>
+                        <p style="margin-bottom: 20px; text-align: center;"><strong>Video Presentation</strong> <a href="https://arxiv.org/pdf/2410.04047" style="padding: 1px 4px; background-color: #add8e6; color: white; border-radius: 5px; text-decoration: none;"> ➔</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Services Area -->
+
+    <!-- Start Team Area -->
+     <!--
+    <section class="team section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Meet Our Team</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered alteration in some form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="single-team">
+                        <div class="team-image">
+                            <img src="{{url_for('static',filename='assets/images/team/team4.jpg')}}" alt="#">
+                        </div>
+                        <div class="content">
+                            <h4>Deco Milan
+                                <span>Founder</span>
+                            </h4>
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="single-team">
+                        <div class="team-image">
+                            <img src="{{url_for('static',filename='assets/images/team/team1.jpg')}}" alt="#">
+                        </div>
+                        <div class="content">
+                            <h4>Liza Marko
+                                <span>Developer</span>
+                            </h4>
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="single-team">
+                        <div class="team-image">
+                            <img src="{{url_for('static',filename='assets/images/team/team2.jpg')}}" alt="#">
+                        </div>
+                        <div class="content">
+                            <h4>John Smith
+                                <span>Designer</span>
+                            </h4>
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".9s">
+                    <div class="single-team">
+                        <div class="team-image">
+                            <img src="{{url_for('static',filename='assets/images/team/team3.jpg')}}" alt="#">
+                        </div>
+                        <div class="content">
+                            <h4>Amion Doe
+                                <span>Co-Founder</span>
+                            </h4>
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <!--/ End Team Area -->
+
+    <!-- Start Faq Area -->
+    <!--
+    <section class="faq section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Faq</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">frequently asked questions</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have
+                            suffered alteration in some form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    <span class="title">Can I cancel my subscription at anytime?</span><i
+                                        class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit
+                                        amet ante nec vulputate. Nulla aliquam, justo auctor consequat tincidunt, arcu
+                                        erat mattis lorem.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit
+                                        amet ante nec vulputate.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    <span class="title">Can I change my plan later on?</span><i
+                                        class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute. non cupidatat skateboard dolor
+                                        brunch. Foosd truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+                                    </p>
+                                    <p>
+                                        sunt alqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et. Nihil anim ke ffiyeh helvetica, craft beer labore wes anderson
+                                        cred nesciunt sapiente ea proident.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    <span class="title">Will you renew my subscription automatically?</span><i
+                                        class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas expedita,
+                                        repellendus est nemo cum quibusdam optio, voluptate hic a tempora facere, nihil
+                                        non itaque alias similique quas quam odit consequatur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-12 xs-margin">
+                    <div class="accordion" id="accordionExample2">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading11">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                                    <span class="title">How many sites can I install the widgets of this app
+                                        to?</span><i class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit
+                                        amet ante nec vulputate. Nulla aliquam, justo auctor consequat tincidunt, arcu
+                                        erat mattis lorem.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit
+                                        amet ante nec vulputate.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading22">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
+                                    <span class="title">Do you offer any discounts?</span><i class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse22" class="accordion-collapse collapse" aria-labelledby="heading22"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute. non cupidatat skateboard dolor
+                                        brunch. Foosd truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+                                    </p>
+                                    <p>
+                                        sunt alqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et. Nihil anim ke ffiyeh helvetica, craft beer labore wes anderson
+                                        cred nesciunt sapiente ea proident.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading33">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse33" aria-expanded="false" aria-controls="collapse33">
+                                    <span class="title">Do I get updates for the app?</span><i class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse33" class="accordion-collapse collapse" aria-labelledby="heading33"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas expedita,
+                                        repellendus est nemo cum quibusdam optio, voluptate hic a tempora facere, nihil
+                                        non itaque alias similique quas quam odit consequatur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <!--/ End Faq Area -->
+
+    <!-- Start Clients Logo Area -->
+     <!--
+    <div class="client-logo bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-3 col-12 text-center">
+                    <div class="single-logo">
+                        <img src="{{url_for('static',filename='assets/images/client-logo/graygrids-logo.svg')}}" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 text-center">
+                    <div class="single-logo">
+                        <img src="{{url_for('static',filename='assets/images/client-logo/lineicons-logo.svg')}}" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 text-center">
+                    <div class="single-logo">
+                        <img src="{{url_for('static',filename='assets/images/client-logo/ayro-logo.svg')}}" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 text-center">
+                    <div class="single-logo">
+                        <img src="{{url_for('static',filename='assets/images/client-logo/uideck-logo.svg')}}" alt="#">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- End Clients Logo Area -->
+
+    <!-- Start Call Action Area -->
+    <section class="call-action">
+        <div class="container">
+            <div class="inner-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-7 col-12">
+                        <div class="text">
+                            <h2>Ready to dive in?
+                                <br> <span>Start your trial today.</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5 col-12">
+                        <div class="button">
+                            <a href="#timeagi-models" class="btn">Get started
+                            </a>
+                            <a href="{{ url_for('document') }}" class="btn btn-alt">Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Call Action Area -->
+
+   
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+	<script src="{{url_for('static',filename='assets/js/jquery-1.11.0.min.js')}}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for("static", filename="assets/js/jquery-1.10.1.min.js") }}"><\/script>')</script>
+    
+    
+	<script src="https://cdn.bootcdn.net/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='assets/js/bootstrap.bundle.min.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='assets/js/plugins.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='assets/js/script.js')}}"></script>
+	<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+	
+<!-- 	<script src="js/data-show.js"></script> -->
+	
+    <script src="{{url_for('static',filename='assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/wow.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/tiny-slider.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/glightbox.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/count-up.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/imagesloaded.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/isotope.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+    <script>
+
+        //========= testimonial 
+        tns({
+            container: '.testimonial-slider',
+            items: 3,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: true,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 2,
+                },
+                1170: {
+                    items: 3,
+                }
+            }
+        });
+
+        //====== counter up 
+        var cu = new counterUp({
+            start: 0,
+            duration: 2000,
+            intvalues: true,
+            interval: 100,
+            append: " ",
+        });
+        cu.start();
+
+        //========= glightbox
+        GLightbox({
+            'href': '#',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+
+        //============== isotope masonry js with imagesloaded
+        imagesLoaded('#container', function () {
+            var elem = document.querySelector('.grid');
+            var iso = new Isotope(elem, {
+                // options
+                itemSelector: '.grid-item',
+                masonry: {
+                    // use outer width of grid-sizer for columnWidth
+                    columnWidth: '.grid-item'
+                }
+            });
+
+            let filterButtons = document.querySelectorAll('.portfolio-btn-wrapper button');
+            filterButtons.forEach(e =>
+                e.addEventListener('click', () => {
+
+                    let filterValue = event.target.getAttribute('data-filter');
+                    iso.arrange({
+                        filter: filterValue
+                    });
+                })
+            );
+        });
+
+    </script>
+	
+	<script src="{{url_for('static',filename='js/data-show.js')}}"></script>
+</body>
+
+</html>

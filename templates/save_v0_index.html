@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Craft - Startup Landing Page Template.</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename='assets/images/favicon.svg')}}" />
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/LineIcons.3.0.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/animate.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/tiny-slider.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/glightbox.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}" />
+	<link rel="stylesheet" href="{{url_for('static',filename='assets/css/data-container.css')}}" />
+    <!-- <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" /> -->
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" />
+	
+    <link href="{{url_for('static',filename='assets/css/date-time-picker-component.min.css')}}" rel="stylesheet">
+    <script src="{{url_for('static',filename='assets/js/modernizr.js')}}"></script>
+	  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Old+Standard+TT:wght@400;700&display=swap"
+	    rel="stylesheet">
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="{{url_for('home')}}" class="active" aria-label="Toggle navigation">Home</a>
+                                    </li>
+									<li class="nav-item">
+									    <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+									        data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
+									        aria-expanded="false" aria-label="Toggle navigation">Data Show</a>
+									    <ul class="sub-menu collapse" id="submenu-1-2">
+									        <li class="nav-item"><a href="{{url_for('datashow')}}">Sample-1</a></li>
+                                            <li class="nav-item"><a href="{{url_for('otherdatashow')}}">Sample-2</a> </li>
+									    </ul>
+									</li>
+                                    <!-- <li class="nav-item">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Pages</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-1">
+                                            <li class="nav-item"><a href="about-us.html">About Us</a></li>
+                                            <li class="nav-item"><a href="pricing.html">Our Pricing</a></li>
+                                            <li class="nav-item"><a href="signin.html">Sign In</a></li>
+                                            <li class="nav-item"><a href="signup.html">Sign Up</a></li>
+                                            <li class="nav-item"><a href="reset-password.html">Reset Password</a>
+                                            <li class="nav-item"><a href="mail-success.html">Mail Success</a></li>
+                                            <li class="nav-item"><a href="404.html">404 Error</a></li>
+                                        </ul>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Blog</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-2">
+                                            <li class="nav-item"><a href="#">Blog Grid</a></li>
+                                            
+                                            <li class="nav-item"><a href="#">Blog Single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{url_for('contact')}}" aria-label="Toggle navigation">Contact</a>
+                                    </li>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{url_for('document')}}" aria-label="Toggle navigation">Document</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <!-- <div class="button">
+                                <a href="signup.html" class="btn">Get started</a>
+                            </div> -->
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+	
+	<!-- Start Hero Area -->
+	<section class="hero-area">
+	    
+	    <div class="main__circle2"></div>
+	    <div class="main__circle3"></div>
+	    <div class="main__circle4"></div>
+		
+	    <div class="container">
+			
+	        <div class="row align-items-center">
+	            <div class="col-lg-7 col-12"  style="margin-left: 10%; width: 80%; margin-top: -5%; ">
+	                <div class="app-image" >
+	                    <img src="{{url_for('static',filename='assets/images/hero/0.svg')}}" >
+	                </div>
+	            </div>
+	        </div>
+			 <div class="col-12">
+			<div class="section-title">
+			    <h2 class="wow zoomIn" data-wow-delay=".1s">Time Series Foundation Model</h2>
+				<p class="wow fadeInUp" data-wow-delay=".6s">We empower organizations to harness the full potential of their data through our cutting-edge multi-modality time series solution. Our platform stands at the forefront of analytics, seamlessly blending diverse data streams—from temporal patterns to spatial imagery and beyond—into a cohesive analytical framework.</p>
+			    </div>
+				</div>
+	    </div>
+	</section>
+	<!-- End Hero Area -->
+
+    <!-- Start Services Area -->
+    <div class="services section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s" style="font-size: 50px;" >General Time Series Tasks</h3>
+                        <!--  <h2 class="wow fadeInUp" data-wow-delay=".4s">Time Series Foundation Model</h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="single-service">
+                        <div class="main-icon">
+                            <i class="lni lni-grid-alt"></i>
+                        </div>
+                        <h4 class="text-title">Forecasting Suite</h4>
+                        <p>Includes tools for short-term and long-term forecasting, as well as probabilistic forecasting to account for uncertainty.​</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="single-service">
+                        <div class="main-icon">
+                            <i class="lni lni-keyword-research"></i>
+                        </div>
+                        <h4 class="text-title">Causal Analysis Engine</h4>
+                        <p>Helps to uncover causal relationships within time series data, which is crucial for understanding why certain events occur.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="single-service">
+                        <div class="main-icon">
+                            <i class="lni lni-vector"></i>
+                        </div>
+                        <h4 class="text-title">Counterfactual Framework</h4>
+                        <p>Offers a sophisticated counterfactual prediction feature, enabling users to explore 'what-if' scenarios.<br> <br></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="single-service">
+                        <div class="main-icon">
+                            <i class="lni lni-book"></i>
+                        </div>
+                        <h4 class="text-title">Anomaly Detection System</h4>
+                        <p>Uses advanced algorithms to detect anomalies in real-time, helping to prevent fraud and identify system failures.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="single-service">
+                        <div class="main-icon">
+                            <i class="lni lni-cloud-network"></i>
+                        </div>
+                        <h4 class="text-title">Classification Toolkit</h4>
+                        <p>Allows for the categorization of time series data into different classes for easier analysis and interpretation.<br> ​</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="single-service">
+                        <div class="main-icon">
+                            <i class="lni lni-display-alt"></i>
+                        </div>
+                        <h4 class="text-title">Synthetic Data Generation</h4>
+                        <p>Generates high-quality synthetic time series data for testing, training, and simulation purposes.<br> <br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Services Area -->
+
+	<!-- Start Testimonials Area -->
+	    <section class="testimonials style2 section">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-12">
+	                    <div class="section-title">
+	<!--                        <h3 class="wow zoomIn" data-wow-delay=".2s">Customer Reviews</h3> -->
+	                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Foundation of time series​</h2>
+	<!--                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+	                            Ipsum available, but the majority have suffered alteration in some form.</p> -->
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="row testimonial-slider">
+	                <div class="col-lg-6 col-12 ">
+	                    <!-- Start Single Testimonial -->
+	                    <div class="single-testimonial">
+	                        <div class="inner-content">
+	                            <div class="quote-icon">
+	                                <i class="lni lni-quotation"></i>
+	                            </div>
+	                            <div class="text">
+	                                <p>Our platform excels in spatio-temporal analytics, which is the fusion of spatial data (location, geography) with temporal data (time series).​ <br>
+									 Our advanced spatio-temporal models are the backbone for predictive analytics, allowing users to forecast future events with a high degree of precision and to make more informed decisions based on the 'where' and 'when' of their data.<br> <br></p>
+	                            </div>
+	                            <div class="author">
+	                                <h3 class="name">Spatio-Temporal​</h3>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- End Single Testimonial -->
+	                </div>
+	                <div class="col-lg-6 col-12 ">
+	                    <!-- Start Single Testimonial -->
+	                    <div class="single-testimonial">
+	                        <div class="inner-content">
+	                            <div class="quote-icon">
+	                                <i class="lni lni-quotation"></i>
+	                            </div>
+	                            <div class="text">
+	                                <p>Embrace the power of multi modality with our platform, where diverse data streams converge to tell a complete story.​ <br>
+									We integrate time series data with text, images, audio, and video, providing a holistic view of complex phenomena. <br>
+									By leveraging cross-modal correlations, our clients gain a competitive edge through comprehensive understanding and actionable intelligence.​
+									</p>
+	                            </div>
+	                            <div class="author">
+	                                <h3 class="name">Multi Modality​</h3>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- End Single Testimonial -->
+	                </div>
+	                <div class="col-lg-6 col-12 ">
+	                    <!-- Start Single Testimonial -->
+	                    <div class="single-testimonial">
+	                        <div class="inner-content">
+	                            <div class="quote-icon">
+	                                <i class="lni lni-quotation"></i>
+	                            </div>
+	                            <div class="text">
+	                                <p>Our platform prioritizes interpretability, offering comprehensible analytics. It reveals data interactions over time, explaining how variables influence each other,
+									and enabling users to understand the 'why' behind the 'what'.
+							
+									
+									<br>Our time series models provide clear explanations for their outputs, enhancing trust and facilitating decision-making in critical sectors like finance and healthcare.</p>
+									
+								</div>
+	                            <div class="author">
+	                                <h3 class="name">Relationships​</h3>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- End Single Testimonial -->
+	                </div>
+	                <div class="col-lg-6 col-12 ">
+	                    <!-- Start Single Testimonial -->
+	                    <div class="single-testimonial">
+	                        <div class="inner-content">
+	                            <div class="quote-icon">
+	                                <i class="lni lni-quotation"></i>
+	                            </div>
+	                            <div class="text">
+	                                <p>Experience unmatched clarity and adaptability with our multi-resolution time series analysis.
+										Our platform reveals different insights at varying scales, from long-term trends to high-frequency nuances.
+
+									<br>Our customized analytical lens is fine-tuned to the specific temporal needs of each investigation. This flexibility allows clients to zoom in anomalies or zoom out to identify overarching patterns.<br> <br></p>
+	                            </div>
+	                            <div class="author">
+	                                <h3 class="name">Multi-Resolution​</h3>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- End Single Testimonial -->
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	    <!-- End Testimonial Area -->
+
+    <!-- Start Team Area -->
+    <section class="team section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Expert Team</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Meet Our Team</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered alteration in some form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".3s">
+                    <!-- Start Single Team -->
+                    <div class="single-team">
+                        <div class="team-image">
+                            <img src="{{url_for('static',filename='assets/images/team/team4.jpg')}}" alt="#">
+                        </div>
+                        <div class="content">
+                            <h4>Deco Milan
+                                <span>Founder</span>
+                            </h4>
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".5s">
+                    <!-- Start Single Team -->
+                    <div class="single-team">
+                        <div class="team-image">
+                            <img src="{{url_for('static',filename='assets/images/team/team1.jpg')}}" alt="#">
+                        </div>
+                        <div class="content">
+                            <h4>Liza Marko
+                                <span>Developer</span>
+                            </h4>
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".7s">
+                    <!-- Start Single Team -->
+                    <div class="single-team">
+                        <div class="team-image">
+                            <img src="{{url_for('static',filename='assets/images/team/team2.jpg')}}" alt="#">
+                        </div>
+                        <div class="content">
+                            <h4>John Smith
+                                <span>Designer</span>
+                            </h4>
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-delay=".9s">
+                    <!-- Start Single Team -->
+                    <div class="single-team">
+                        <div class="team-image">
+                            <img src="{{url_for('static',filename='assets/images/team/team3.jpg')}}" alt="#">
+                        </div>
+                        <div class="content">
+                            <h4>Amion Doe
+                                <span>Co-Founder</span>
+                            </h4>
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Team Area -->
+
+    <!-- Start Faq Area -->
+    <section class="faq section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Faq</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">frequently asked questions</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have
+                            suffered alteration in some form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    <span class="title">Can I cancel my subscription at anytime?</span><i
+                                        class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit
+                                        amet ante nec vulputate. Nulla aliquam, justo auctor consequat tincidunt, arcu
+                                        erat mattis lorem.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit
+                                        amet ante nec vulputate.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    <span class="title">Can I change my plan later on?</span><i
+                                        class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute. non cupidatat skateboard dolor
+                                        brunch. Foosd truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+                                    </p>
+                                    <p>
+                                        sunt alqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et. Nihil anim ke ffiyeh helvetica, craft beer labore wes anderson
+                                        cred nesciunt sapiente ea proident.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    <span class="title">Will you renew my subscription automatically?</span><i
+                                        class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas expedita,
+                                        repellendus est nemo cum quibusdam optio, voluptate hic a tempora facere, nihil
+                                        non itaque alias similique quas quam odit consequatur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-12 xs-margin">
+                    <div class="accordion" id="accordionExample2">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading11">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                                    <span class="title">How many sites can I install the widgets of this app
+                                        to?</span><i class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit
+                                        amet ante nec vulputate. Nulla aliquam, justo auctor consequat tincidunt, arcu
+                                        erat mattis lorem.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit
+                                        amet ante nec vulputate.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading22">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
+                                    <span class="title">Do you offer any discounts?</span><i class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse22" class="accordion-collapse collapse" aria-labelledby="heading22"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute. non cupidatat skateboard dolor
+                                        brunch. Foosd truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+                                    </p>
+                                    <p>
+                                        sunt alqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et. Nihil anim ke ffiyeh helvetica, craft beer labore wes anderson
+                                        cred nesciunt sapiente ea proident.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading33">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse33" aria-expanded="false" aria-controls="collapse33">
+                                    <span class="title">Do I get updates for the app?</span><i class="lni lni-plus"></i>
+                                </button>
+                            </h2>
+                            <div id="collapse33" class="accordion-collapse collapse" aria-labelledby="heading33"
+                                data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas expedita,
+                                        repellendus est nemo cum quibusdam optio, voluptate hic a tempora facere, nihil
+                                        non itaque alias similique quas quam odit consequatur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Faq Area -->
+
+    <!-- Start Clients Logo Area -->
+    <div class="client-logo bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-3 col-12 text-center">
+                    <div class="single-logo">
+                        <img src="{{url_for('static',filename='assets/images/client-logo/graygrids-logo.svg')}}" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 text-center">
+                    <div class="single-logo">
+                        <img src="{{url_for('static',filename='assets/images/client-logo/lineicons-logo.svg')}}" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 text-center">
+                    <div class="single-logo">
+                        <img src="{{url_for('static',filename='assets/images/client-logo/ayro-logo.svg')}}" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 text-center">
+                    <div class="single-logo">
+                        <img src="{{url_for('static',filename='assets/images/client-logo/uideck-logo.svg')}}" alt="#">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Clients Logo Area -->
+
+    <!-- Start Call Action Area -->
+    <section class="call-action">
+        <div class="container">
+            <div class="inner-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-7 col-12">
+                        <div class="text">
+                            <h2>Ready to dive in?
+                                <br> <span>Start your free trial today.</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5 col-12">
+                        <div class="button">
+                            <a href="pricing.html" class="btn">Get started
+                            </a>
+                            <a href="about-us.html" class="btn btn-alt">Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Call Action Area -->
+
+   
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+	<script src="{{url_for('static',filename='assets/js/jquery-1.11.0.min.js')}}"></script>
+	<script src="{{url_for('static',filename='assets/js/date-time-picker.min.js')}}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for("static", filename="assets/js/jquery-1.10.1.min.js") }}"><\/script>')</script>
+    
+    
+	<script src="https://cdn.bootcdn.net/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='assets/js/bootstrap.bundle.min.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='assets/js/plugins.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='assets/js/script.js')}}"></script>
+	<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+	
+<!-- 	<script src="js/data-show.js"></script> -->
+	
+    <script src="{{url_for('static',filename='assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/wow.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/tiny-slider.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/glightbox.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/count-up.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/imagesloaded.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/isotope.min.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+    <script>
+
+        //========= testimonial 
+        tns({
+            container: '.testimonial-slider',
+            items: 3,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: true,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 2,
+                },
+                1170: {
+                    items: 3,
+                }
+            }
+        });
+
+        //====== counter up 
+        var cu = new counterUp({
+            start: 0,
+            duration: 2000,
+            intvalues: true,
+            interval: 100,
+            append: " ",
+        });
+        cu.start();
+
+        //========= glightbox
+        GLightbox({
+            'href': '#',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+
+        //============== isotope masonry js with imagesloaded
+        imagesLoaded('#container', function () {
+            var elem = document.querySelector('.grid');
+            var iso = new Isotope(elem, {
+                // options
+                itemSelector: '.grid-item',
+                masonry: {
+                    // use outer width of grid-sizer for columnWidth
+                    columnWidth: '.grid-item'
+                }
+            });
+
+            let filterButtons = document.querySelectorAll('.portfolio-btn-wrapper button');
+            filterButtons.forEach(e =>
+                e.addEventListener('click', () => {
+
+                    let filterValue = event.target.getAttribute('data-filter');
+                    iso.arrange({
+                        filter: filterValue
+                    });
+                })
+            );
+        });
+
+    </script>
+	
+	<script src="{{url_for('static',filename='js/data-show.js')}}"></script>
+</body>
+
+</html>

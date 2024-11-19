@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Data Show</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+    
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/LineIcons.3.0.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/animate.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/tiny-slider.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/glightbox.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/data-container.css')}}" />
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" />
+    <script src="{{url_for('static',filename='assets/js/modernizr.js')}}"></script>
+      
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .dropdown-menu {
+            max-height: 200px; /* Adjust the height as needed */
+            overflow-y: auto;
+            position: fixed;
+            /* z-index: 1000; */
+        }
+        .btn{color: #FFFF; font-weight: bold; font-size: larger;}
+        .theader{border-bottom: 1px solid #FFF}
+        .table-responsive{ overflow: visible; border-radius: 5px; box-shadow: 0px 5px 30px 5px #727074;
+            margin-bottom: 5%;margin-left: 5%;margin-right: 6%;}
+        .navbar-area{
+				position: fixed;
+				z-index: 100;
+				transition: background-color 0.3s ;
+				
+				background-color: transparent;
+			}
+		.navbar-area.scrolled{ background-color: #FFF;}
+    </style>
+</head>
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Data Show</h1>
+                        <ul class="breadcrumb-nav">
+                            <li><a href="#">Home</a></li>
+                            <li>Data Show</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+<body>
+    <!-- Start Header Area -->
+    <header class="header navbar-area" id="navbar-area" >
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="{{url_for('home')}}" aria-label="Toggle navigation">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{url_for('document')}}" aria-label="Toggle navigation">Document</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed active" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Data Show</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-2">
+                                            <li class="nav-item"><a href="{{url_for('datashow')}}">Sample-1</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <!-- <div class="button">
+                                <a href="signup.html" class="btn">Get started</a>
+                            </div> -->
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+    <!-- table -->
+    <div class=" table-responsive" id="InputData1" >
+        <table class='Table text-nowrap'>
+            <thead>
+                <tr class="text-center " style="background-color: #7E57FF;"  >
+                    <th class="theader" width="250px">
+                        <div class="dropdown d-inline">
+                            <button class="btn dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Model
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton"  >
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','TEMPO')">TEMPO</a></li>  
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','ETSformer')">ETSformer</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','FEDFormer')">FEDFormer</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','GPT2')">GPT2</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','Informer')">Informer</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','PatchTST')">PatchTST</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','T5')">T5</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','Timesnet')">Timesnet</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('model','DLinear')">DLinear</a></li>
+                                <li> <a class="dropdown-item" href="#" onclick="setFilter('model','')">Show All</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th class="theader" width="250px">
+                        <div class="dropdown d-inline">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Dataset
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ECL')">ECL</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ETTh1')">ETTh1</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ETTh2')">ETTh2</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ETTm1')">ETTm1</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','ETTm2')">ETTm2</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','Traffic')">Traffic</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','Weather')">Weather</a> </li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('dataset','')">Show All</a> </li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th class="theader" width="250px">
+                        <div class="dropdown d-inline">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Prediction Length
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','96')">96</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','192')">192</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','336')">336</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','720')">720</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','Avg')">Avg</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setFilter('predlen','')">Show All</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th class="theader" width="250px" > 
+                        <button class="sortable btn  "  onclick="sortTable(3)">MSE</button>
+                       
+                        
+                    </th>
+                    <th class="theader" width="250px">
+                        <button class="sortable btn " onclick="sortTable(4)">MAE</button>
+                        
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                {% for rows in data_container %}
+                <tr class="text-center">
+                    <td>{{ rows[0] }}</td>
+                    <td>{{ rows[1] }}</td>
+                    <td style="width: 210px;">{{ rows[2] }}</td>
+                    <td>{{ rows[3] }}</td>
+                    <td>{{ rows[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <!-- jQuery -->
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='assets/js/jquery-3.3.1.slim.min.js') }}"></script>
+    <!-- Popper.js -->
+    <script src="{{ url_for('static', filename='assets/js/popper.min.js') }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+    <script src="static/js/data-show.js">  </script>
+    <script>
+        window.addEventListener('scroll', function() {
+          const navbar = document.getElementById('navbar-area');
+          if (window.scrollY > 0) { 
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+    </script>
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+</body>
+
+</html>
