@@ -31,6 +31,36 @@
         h4 {
         margin-top: 20px;  /* 为所有 h4 标签添加顶部边距 */
         }
+        .model-card-vertical {
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            background-color: #ffffff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .model-card-vertical:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .model-card-vertical button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .model-card-vertical button:hover {
+            background-color: #0056b3;
+        }
     </style>    
 </head>
 
@@ -185,23 +215,30 @@
                 <div class="col-lg-9 col-md-8 col-12">
                     <div class="document-content">
                         <section id="tempo" class="content-section">
-                            <h3>TEMPO: Prompt-based Generative Pre-trained Transformer for Time Series Forecasting</h3>
-                            <p style="margin-bottom: 20px;">TEMPO is an innovative framework that leverages prompt-based generative pre-trained transformers for time series forecasting. Designed to overcome the limitations of traditional time series models, TEMPO excels at capturing complex temporal patterns across diverse domains, including healthcare, finance, and energy. By incorporating specialized prompts and a decomposition-based approach, TEMPO efficiently adapts to the trends, seasonality, and residual components of time series data, leading to more accurate and robust predictions.</p>
+                            <div class="model-card-vertical">
+                                <h3>TEMPO</h3>
+                                <p>TEMPO is a framework using prompt-based transformers for time series forecasting across domains like healthcare and finance. With decomposition techniques and multimodal data, it excels in zero-shot forecasting and helps identify key drivers behind trends, supporting data-driven decisions.</p>
+                                <button onclick="navigateToDetails('tempo-details')">Learn More</button>
+                            </div>
+                            <div id="tempo-details" style="display: none;">
+                                <h3>TEMPO: Prompt-based Generative Pre-trained Transformer for Time Series Forecasting</h3>
+                                <p style="margin-bottom: 20px;">TEMPO is an innovative framework that leverages prompt-based generative pre-trained transformers for time series forecasting. Designed to overcome the limitations of traditional time series models, TEMPO excels at capturing complex temporal patterns across diverse domains, including healthcare, finance, and energy. By incorporating specialized prompts and a decomposition-based approach, TEMPO efficiently adapts to the trends, seasonality, and residual components of time series data, leading to more accurate and robust predictions.</p>
 
-                            <p style="margin-bottom: 20px;">TEMPO's architecture combines an encoder-decoder transformer structure with the power of semi-soft prompts, guiding the model to learn the underlying characteristics of time series data. This enables the effective use of zero-shot and few-shot forecasting, making it suitable for scenarios where labeled data is limited or for tasks involving unseen datasets. Moreover, TEMPO seamlessly integrates multimodal data, using contextual information such as textual inputs to enhance forecast accuracy in complex scenarios.</p>
+                                <p style="margin-bottom: 20px;">TEMPO's architecture combines an encoder-decoder transformer structure with the power of semi-soft prompts, guiding the model to learn the underlying characteristics of time series data. This enables the effective use of zero-shot and few-shot forecasting, making it suitable for scenarios where labeled data is limited or for tasks involving unseen datasets. Moreover, TEMPO seamlessly integrates multimodal data, using contextual information such as textual inputs to enhance forecast accuracy in complex scenarios.</p>
 
-                            <p style="margin-bottom: 20px;">With its emphasis on interpretability, TEMPO not only provides accurate predictions but also helps uncover key drivers behind temporal changes. This makes it an ideal solution for industries requiring data-driven insights, anomaly detection, and strategic decision-making. TEMPO sets a new benchmark for leveraging large language models in time series analysis, bridging the gap between foundational AI technologies and practical, real-world applications.</p>
+                                <p style="margin-bottom: 20px;">With its emphasis on interpretability, TEMPO not only provides accurate predictions but also helps uncover key drivers behind temporal changes. This makes it an ideal solution for industries requiring data-driven insights, anomaly detection, and strategic decision-making. TEMPO sets a new benchmark for leveraging large language models in time series analysis, bridging the gap between foundational AI technologies and practical, real-world applications.</p>
 
-                            <p style="margin-bottom: 20px;"><strong>Paper Link</strong>: To learn more about the technical details and findings, please refer to the official TEMPO paper available <a href="https://openreview.net/pdf?id=YH5w12OUuU">here</a>.</p>
+                                <p style="margin-bottom: 20px;"><strong>Paper Link</strong>: To learn more about the technical details and findings, please refer to the official TEMPO paper available <a href="https://openreview.net/pdf?id=YH5w12OUuU">here</a>.</p>
 
-                            <p style="margin-bottom: 20px;"><strong>GitHub Repository</strong>: Explore the TEMPO codebase, contribute, or adapt it to your needs by visiting our GitHub repository <a href="https://github.com/DC-research/TEMPO/tree/main">here</a>.</p>
+                                <p style="margin-bottom: 20px;"><strong>GitHub Repository</strong>: Explore the TEMPO codebase, contribute, or adapt it to your needs by visiting our GitHub repository <a href="https://github.com/DC-research/TEMPO/tree/main">here</a>.</p>
 
-                            <p style="margin-bottom: 20px;"><strong>HuggingFace Model</strong>: You can also try out TEMPO directly via HuggingFace, where we host the pre-trained models for easy access. Check out our HuggingFace page <a href="https://huggingface.co/Melady/TEMPO">here</a>.</p>
+                                <p style="margin-bottom: 20px;"><strong>HuggingFace Model</strong>: You can also try out TEMPO directly via HuggingFace, where we host the pre-trained models for easy access. Check out our HuggingFace page <a href="https://huggingface.co/Melady/TEMPO">here</a>.</p>
 
-                            <figure style="text-align: center;">
-                                <img src="./static/assets/images/document/doc-1.jpg" alt="TEMPO Model Architecture." style="max-width:80%; height:auto;">
-                                <figcaption>Figure 1: TEMPO Model Architecture</figcaption>
-                            </figure>
+                                <figure style="text-align: center;">
+                                    <img src="./static/assets/images/document/doc-1.jpg" alt="TEMPO Model Architecture." style="max-width:80%; height:auto;">
+                                    <figcaption>Figure 1: TEMPO Model Architecture</figcaption>
+                                </figure>
+                            </div>
                          </section>                                                                        
                         <section id="introduction" class="content-section" style="display:none;">
                             <h3>About TEMPO</h3>
@@ -408,23 +445,30 @@ bash [ecl, eth1, eth2, ettm1, ettm2, traffic, weather]_test.sh
                             </details>
                         </section>
                         <section id="timedit" class="content-section">
-                            <h3>TimeDiT: General-Purpose Diffusion Transformers for Time Series Foundation Modeling</h3>
-                            <p style="margin-bottom: 20px;">TimeDiT is a pioneering foundation model for time series analysis that employs a diffusion-based approach combined with Transformer architecture. Unlike traditional autoregressive models, TimeDiT generates high-quality time series data through a denoising diffusion paradigm, which effectively addresses the challenges presented by missing values, multi-resolution data, and complex temporal dependencies.</p>
+                            <div class="model-card-vertical">
+                                <h3>TimeDiT</h3>
+                                <p>TimeDiT is a foundation model for time series analysis, leveraging a diffusion-based approach with Transformer architecture to handle complex tasks like forecasting, imputation, and anomaly detection. By using denoising diffusion, TimeDiT effectively manages missing values and temporal dependencies.</p>
+                                <button onclick="navigateToDetails('timedit-details')">Learn More</button>
+                            </div>
+                            <div id="timedit-details" style="display: none;">
+                                <h3>TimeDiT: General-Purpose Diffusion Transformers for Time Series Foundation Modeling</h3>
+                                <p style="margin-bottom: 20px;">TimeDiT is a pioneering foundation model for time series analysis that employs a diffusion-based approach combined with Transformer architecture. Unlike traditional autoregressive models, TimeDiT generates high-quality time series data through a denoising diffusion paradigm, which effectively addresses the challenges presented by missing values, multi-resolution data, and complex temporal dependencies.</p>
 
-                            <p style="margin-bottom: 20px;">TimeDiT's architecture allows for seamless handling of various downstream tasks—including forecasting, imputation, anomaly detection, and synthetic data generation—by incorporating novel masking strategies and a channel alignment mechanism. Moreover, TimeDiT supports the integration of external domain knowledge, such as physical laws, during its sampling process without requiring additional fine-tuning. This feature ensures that generated time series adhere to known physical principles, making TimeDiT a versatile solution for diverse real-world applications.</p>
+                                <p style="margin-bottom: 20px;">TimeDiT's architecture allows for seamless handling of various downstream tasks—including forecasting, imputation, anomaly detection, and synthetic data generation—by incorporating novel masking strategies and a channel alignment mechanism. Moreover, TimeDiT supports the integration of external domain knowledge, such as physical laws, during its sampling process without requiring additional fine-tuning. This feature ensures that generated time series adhere to known physical principles, making TimeDiT a versatile solution for diverse real-world applications.</p>
 
-                            <p style="margin-bottom: 20px;">Evaluated on over 20 datasets and benchmarked against more than 25 models, TimeDiT has demonstrated state-of-the-art or highly competitive performance across numerous challenging tasks, solidifying its position as a powerful, scalable, and adaptable foundation model for time series analysis.</p>
+                                <p style="margin-bottom: 20px;">Evaluated on over 20 datasets and benchmarked against more than 25 models, TimeDiT has demonstrated state-of-the-art or highly competitive performance across numerous challenging tasks, solidifying its position as a powerful, scalable, and adaptable foundation model for time series analysis.</p>
 
-                            <p style="margin-bottom: 20px;"><strong>Paper Link</strong>: To learn more about the technical details and findings, please refer to the official TimeDiT paper available <a href="https://arxiv.org/pdf/2409.02322">here</a>.</p>
-                            <!--
-                            <p style="margin-bottom: 20px;"><strong>GitHub Repository</strong>: Explore the TimeDiT codebase, contribute, or adapt it to your needs by visiting our GitHub repository <a href="https://github.com/DC-research/TEMPO/tree/main">here</a>.</p>
+                                <p style="margin-bottom: 20px;"><strong>Paper Link</strong>: To learn more about the technical details and findings, please refer to the official TimeDiT paper available <a href="https://arxiv.org/pdf/2409.02322">here</a>.</p>
+                                <!--
+                                <p style="margin-bottom: 20px;"><strong>GitHub Repository</strong>: Explore the TimeDiT codebase, contribute, or adapt it to your needs by visiting our GitHub repository <a href="https://github.com/DC-research/TEMPO/tree/main">here</a>.</p>
 
-                            <p style="margin-bottom: 20px;"><strong>HuggingFace Model</strong>: You can also try out TimeDiT directly via HuggingFace, where we host the pre-trained models for easy access. Check out our HuggingFace page <a href="https://huggingface.co/Melady/TEMPO">here</a>.</p>
-                            -->
-                            <figure style="text-align: center;">
-                                <img src="./static/assets/images/document/doc-2.jpg" alt="TimeDiT Model Architecture." style="max-width:60%; height:auto;">
-                                <figcaption>Figure 1: TimeDiT Model Architecture</figcaption>
-                            </figure>
+                                <p style="margin-bottom: 20px;"><strong>HuggingFace Model</strong>: You can also try out TimeDiT directly via HuggingFace, where we host the pre-trained models for easy access. Check out our HuggingFace page <a href="https://huggingface.co/Melady/TEMPO">here</a>.</p>
+                                -->
+                                <figure style="text-align: center;">
+                                    <img src="./static/assets/images/document/doc-2.jpg" alt="TimeDiT Model Architecture." style="max-width:60%; height:auto;">
+                                    <figcaption>Figure 1: TimeDiT Model Architecture</figcaption>
+                                </figure>
+                            </div>
                         </section>                                                                        
                         <section id="timeditintroduction" class="content-section" style="display:none;">
                             <h3>About TimeDiT</h3>
@@ -493,23 +537,30 @@ bash [ecl, eth1, eth2, ettm1, ettm2, traffic, weather]_test.sh
                             </div>
                         </section>
                         <section id="tsreasoner" class="content-section" >
-                            <h3>TS-Reasoner: A Compositional Reasoning Framework for Complex Time Series Analysis</h3>
-                            <p style="margin-bottom: 20px;">TS-Reasoner is a groundbreaking framework designed to go beyond traditional forecasting by enabling complex, compositional time series reasoning. Unlike existing time series models that focus solely on single-step tasks like forecasting or anomaly detection, TS-Reasoner excels in handling intricate multi-step reasoning tasks that integrate domain knowledge and user-defined constraints. By leveraging large language models (LLMs) to decompose complex questions into structured programs, TS-Reasoner seamlessly synthesizes time series data and domain expertise to provide end-to-end solutions.</p>
+                            <div class="model-card-vertical">
+                                <h3>TS-Reasoner</h3>
+                                <p>TS-Reasoner is an advanced framework for complex time series reasoning, integrating large language models (LLMs) to break down multi-step tasks like decision-making and causal analysis into structured programs. TS-Reasoner synthesizes time series data with domain expertise, enabling custom modules and flexible task decomposition.</p>
+                                <button onclick="navigateToDetails('tsreasoner-details')">Learn More</button>
+                            </div>
+                            <div id="tsreasoner-details" style="display: none;">
+                                <h3>TS-Reasoner: A Compositional Reasoning Framework for Complex Time Series Analysis</h3>
+                                <p style="margin-bottom: 20px;">TS-Reasoner is a groundbreaking framework designed to go beyond traditional forecasting by enabling complex, compositional time series reasoning. Unlike existing time series models that focus solely on single-step tasks like forecasting or anomaly detection, TS-Reasoner excels in handling intricate multi-step reasoning tasks that integrate domain knowledge and user-defined constraints. By leveraging large language models (LLMs) to decompose complex questions into structured programs, TS-Reasoner seamlessly synthesizes time series data and domain expertise to provide end-to-end solutions.</p>
 
-                            <p style="margin-bottom: 20px;">The model combines advanced time series analysis with LLM-aided reasoning, allowing for the creation of custom modules and flexible task decomposition. This enables TS-Reasoner to perform diverse tasks, such as decision-making, compositional question answering, and causal analysis—all while optimizing intermediate steps cohesively. Our comprehensive experiments demonstrate that TS-Reasoner outperforms state-of-the-art methods, highlighting its potential in solving real-world, multi-step time series challenges.</p>
+                                <p style="margin-bottom: 20px;">The model combines advanced time series analysis with LLM-aided reasoning, allowing for the creation of custom modules and flexible task decomposition. This enables TS-Reasoner to perform diverse tasks, such as decision-making, compositional question answering, and causal analysis—all while optimizing intermediate steps cohesively. Our comprehensive experiments demonstrate that TS-Reasoner outperforms state-of-the-art methods, highlighting its potential in solving real-world, multi-step time series challenges.</p>
 
-                            <p style="margin-bottom: 20px;">Get started with TS-Reasoner and experience the next level of time series analysis, where structured, program-based reasoning converges with cutting-edge LLM capabilities to redefine what's possible in temporal data analytics.</p>
+                                <p style="margin-bottom: 20px;">Get started with TS-Reasoner and experience the next level of time series analysis, where structured, program-based reasoning converges with cutting-edge LLM capabilities to redefine what's possible in temporal data analytics.</p>
 
-                            <p style="margin-bottom: 20px;"><strong>Paper Link</strong>: To learn more about the technical details and findings, please refer to the official TS-Reasoner paper available <a href="https://arxiv.org/pdf/2410.04047">here</a>.</p>
-                            <!--
-                            <p style="margin-bottom: 20px;"><strong>GitHub Repository</strong>: Explore the TS-Reasoner codebase, contribute, or adapt it to your needs by visiting our GitHub repository <a href="https://github.com/DC-research/TEMPO/tree/main">here</a>.</p>
+                                <p style="margin-bottom: 20px;"><strong>Paper Link</strong>: To learn more about the technical details and findings, please refer to the official TS-Reasoner paper available <a href="https://arxiv.org/pdf/2410.04047">here</a>.</p>
+                                <!--
+                                <p style="margin-bottom: 20px;"><strong>GitHub Repository</strong>: Explore the TS-Reasoner codebase, contribute, or adapt it to your needs by visiting our GitHub repository <a href="https://github.com/DC-research/TEMPO/tree/main">here</a>.</p>
 
-                            <p style="margin-bottom: 20px;"><strong>HuggingFace Model</strong>: You can also try out TS-Reasoner directly via HuggingFace, where we host the pre-trained models for easy access. Check out our HuggingFace page <a href="https://huggingface.co/Melady/TEMPO">here</a>.</p>
-                            -->
-                            <figure style="text-align: center;">
-                                <img src="./static/assets/images/document/doc-3.jpg" alt="TS-Reasoner Model Architecture." style="max-width:80%; height:auto;">
-                                <figcaption>Figure 1: TS-Reasoner Model Architecture</figcaption>
-                            </figure>
+                                <p style="margin-bottom: 20px;"><strong>HuggingFace Model</strong>: You can also try out TS-Reasoner directly via HuggingFace, where we host the pre-trained models for easy access. Check out our HuggingFace page <a href="https://huggingface.co/Melady/TEMPO">here</a>.</p>
+                                -->
+                                <figure style="text-align: center;">
+                                    <img src="./static/assets/images/document/doc-3.jpg" alt="TS-Reasoner Model Architecture." style="max-width:80%; height:auto;">
+                                    <figcaption>Figure 1: TS-Reasoner Model Architecture</figcaption>
+                                </figure>
+                            </div>
                         </section>
                         <section id="tsreasonerintroduction" class="content-section" style="display:none;">
                             <h3>About TS-Reasoner</h3>
@@ -618,6 +669,18 @@ bash [ecl, eth1, eth2, ettm1, ettm2, traffic, weather]_test.sh
                 });
             });
         });
+        function navigateToDetails(detailsId) {
+            // 隐藏所有详细内容
+            const detailsSections = document.querySelectorAll('[id$="-details"]');
+            detailsSections.forEach(section => section.style.display = 'none');
+
+            // 显示点击的详细内容
+            const targetSection = document.getElementById(detailsId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                window.scrollTo({ top: targetSection.offsetTop, behavior: 'smooth' }); // 平滑滚动到目标
+            }
+        }
     </script>
 
 

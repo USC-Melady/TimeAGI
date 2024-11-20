@@ -26,10 +26,12 @@
 	  
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
+	<!-- <link
 		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Old+Standard+TT:wght@400;700&display=swap"
-	    rel="stylesheet">
-
+	    rel="stylesheet">   -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"></noscript>
+    
 </head>
 
 <body>
@@ -41,16 +43,7 @@
       </p>
     <![endif]-->
 
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-icon">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </div>
-    <!-- /End Preloader -->
+
 
     <!-- Start Header Area -->
     <header class="header navbar-area">
@@ -576,12 +569,12 @@
     </a>
 
     <!-- ========================= JS here ========================= -->
-	<script src="{{url_for('static',filename='assets/js/jquery-1.11.0.min.js')}}"></script>
+	<script src="{{url_for('static',filename='assets/js/jquery-1.11.0.min.js')}}"  defer></script>
     <script>window.jQuery || document.write('<script src="{{ url_for("static", filename="assets/js/jquery-1.10.1.min.js") }}"><\/script>')</script>
     
     
 	<script src="https://cdn.bootcdn.net/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
-	<script type="text/javascript" src="{{url_for('static',filename='assets/js/bootstrap.bundle.min.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='assets/js/bootstrap.bundle.min.js')}}" defer></script>
 	<script type="text/javascript" src="{{url_for('static',filename='assets/js/plugins.js')}}"></script>
 	<script type="text/javascript" src="{{url_for('static',filename='assets/js/script.js')}}"></script>
 	<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -595,7 +588,7 @@
     <script src="{{url_for('static',filename='assets/js/count-up.min.js')}}"></script>
     <script src="{{url_for('static',filename='assets/js/imagesloaded.min.js')}}"></script>
     <script src="{{url_for('static',filename='assets/js/isotope.min.js')}}"></script>
-    <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/main.js')}}"  defer></script>
     <script>
 
         //========= testimonial 

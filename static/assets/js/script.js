@@ -27,7 +27,7 @@
 
   "use strict";
 
-  window.addEventListener("load", (event) => {
+  window.addEventListener("DOMContentLoaded", (event) => {
     //isotope
     $('.isotope-container').isotope({
       // options
