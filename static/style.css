@@ -52,7 +52,7 @@ CSS STRUCTURE:
 /* Fonts */
 :root {
   --body-font: "IBM Plex Sans", sans-serif;
-  --heading-font: "Old Standard TT", serif;
+  --heading-font: "IBM Plex Sans", sans-serif;
 }
 
 
